@@ -6,11 +6,11 @@
 
 using namespace std;
 
-string cardNames[] = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
-int cardScores[] = {1,2,3,4,5,6,7,8,9,10,10,10,10};
+string cardNames[] = {"","A","2","3","4","5","6","7","8","9","10","J","Q","K"};
+int cardScores[] = {0,1,2,3,4,5,6,7,8,9,10,10,10,10};
 
 int drawCard(void){
-	int A = rand()%13;
+	int A = rand()%13+1;
 	return A;
 }
 
@@ -25,9 +25,8 @@ int findYugiAction(int s){
 	if(s == 9) return 2; 
 	else if(s < 6) return 1; 
 	else{
-		 srand(time(0));
-		 int x = rand()%101;
-		 if (x>69)
+		 int x = rand()%100+1;
+		 if (x<=69)
 		 {
 			return 1;
 		 }else return 2;
@@ -35,20 +34,20 @@ int findYugiAction(int s){
 }
 
 void checkWinner(int p, int y){
-	cout << "\n---------------------------------\n";
+	cout << "---------------------------------\n";
 	if (p > y)
 	{
-		cout <<   "\n|         Player wins!!!        |\n"; 
+		cout <<   "|         Player wins!!!        |\n"; 
 	}
 	else if(p==y)
 	{
-		cout <<   "\n|             Draw!!!           |\n"; 
+		cout <<   "|             Draw!!!           |\n"; 
 	}
 	else 
 	{
-		cout <<   "\n|          Yugi wins!!!         |\n";
+		cout <<   "|          Yugi wins!!!         |\n";
 	}
-	cout << "\n---------------------------------\n";
+	cout << "---------------------------------\n";
 }
 
 int main(){	

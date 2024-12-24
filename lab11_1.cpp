@@ -26,4 +26,7 @@ int main()
     else if(x==7)grade = "F";
     else if(x==8)grade = "W";
     cout<<"You will get "<<grade<<" in this 261102.";
+
 }
+
+
